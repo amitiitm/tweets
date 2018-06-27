@@ -1,0 +1,27 @@
+<% color_class = ['bg-success', 'bg-secondary', 'bg-info', 'bg-warning'].sample %>
+
+<div class="container">
+	<div class="row btn btn-primary custom-btn">TWEETS For Keyword "<%= @keyword.upcase %>"</div>
+
+	<div class="row">  
+        <div class="timeline-centered">
+
+			<% @response.each do |res| %>
+
+			    <article class="timeline-entry">
+			        <div class="timeline-entry-inner">
+			            <div class="timeline-icon <%= color_class %>">
+			                <i class="entypo-suitcase"></i>
+			            </div>
+			            <div class="timeline-label">
+			                <h2><a href="#">Tweeted On : <%= res.created_at.strftime('%A %m %B, %Y %H:%M%p') %></a></h2>
+			                <p><%= res.text %></p>
+			            </div>
+			        </div>
+			    </article>
+
+			<% end %>
+
+    	</div>    
+	</div>
+</div>

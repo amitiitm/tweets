@@ -1,0 +1,52 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'vendor/**/*'
+    - 'Guardfile'
+    - db/schema.rb
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'bin/*'
+    - 'test/test_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/MultilineIfModifier:
+  Enabled: false
+
+Lint/UnifiedInteger:
+  Enabled: false
+
+Style/RaiseArgs:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Metrics/LineLength:
+  Max: 120
+  IgnoredPatterns: ['\A#']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*'
+    - 'db/migrate/*.rb'
+    - 'db/schema.rb'
+    - 'app/api/*/resources/**/*.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/services/*.rb'
+    - 'db/migrate/*.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
