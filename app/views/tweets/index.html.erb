@@ -1,4 +1,4 @@
-<% color_class = ['bg-success', 'bg-secondary', 'bg-info', 'bg-warning'].sample %>
+<% color_class = ['bg-success', 'bg-secondary', 'bg-info', 'bg-warning'] %>
 
 <div class="container">
 	<div class="row btn btn-primary custom-btn">TWEETS For Keyword "<%= @keyword.upcase %>"</div>
@@ -7,10 +7,10 @@
         <div class="timeline-centered">
 
 			<% @response.each do |res| %>
-
+				<% random_number = rand(0..3) %>
 			    <article class="timeline-entry">
 			        <div class="timeline-entry-inner">
-			            <div class="timeline-icon <%= color_class %>">
+			            <div class="timeline-icon <%= color_class[random_number] %>">
 			                <i class="entypo-suitcase"></i>
 			            </div>
 			            <div class="timeline-label">
