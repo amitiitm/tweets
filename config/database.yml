@@ -8,9 +8,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  host:     localhost
   timeout: 5000
-  username: postgres
-  password: root
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
 development:
   <<: *default
   database: tweet_dev
